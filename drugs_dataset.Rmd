@@ -1,0 +1,51 @@
+---
+title: "drugs_dataset"
+output: html_document
+date: "2023-06-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(dplyr)
+library(freqtables)
+library(readr)
+library(ggplot2)
+library(lubridate)
+library(stringr)
+library(tidyr)
+library(purrr)
+```
+
+
+```{r}
+drugs <- read_delim(
+  file = "/Users/Javi/Desktop/Harris_Health/r4epi_example_project/R_Data/drugs.txt",
+  delim = ","
+)
+```
+
+
+```{r}
+drugs <- drugs %>% 
+  mutate(
+    edu_f = factor(
+      edu, labels = c("Less than high school", "High school", "Some college", "College graduate")
+    ),
+    female_f = factor(female, labels = c("No", "Yes")),
+    use_f = factor(use, labels = c("Non-users", "Use other drugs", "Use opioid drugs"))
+  )
+```
+
+
+
+
+
+
+
+
+
+
