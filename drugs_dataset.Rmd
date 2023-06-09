@@ -21,6 +21,8 @@ library(purrr)
 ```
 
 
+
+
 ```{r}
 drugs <- read_delim(
   file = "/Users/Javi/Desktop/Harris_Health/r4epi_example_project/R_Data/drugs.txt",
